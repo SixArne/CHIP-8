@@ -1,8 +1,11 @@
 #include "chip8.h"
 #include <memory>
+//#include "chip8stack.h"
+#include <iostream>
 
-CHIP_8::CHIP_8::CHIP_8()
+CHIP8::Emulator::Emulator()
 {
-	m_Memory = std::make_unique<Memory>(Memory());
-	m_Registers = std::make_unique<Registers>(Registers());
+	m_Memory = std::make_unique<Memory>();
+	m_Registers = std::make_unique<Registers>();
+	m_Stack = std::make_unique<Stack>();
 }

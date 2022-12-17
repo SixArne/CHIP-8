@@ -7,11 +7,14 @@
 int main()
 {
 	// Make chip-8 device
-	std::unique_ptr<CHIP_8::CHIP_8> pDevice = std::make_unique<CHIP_8::CHIP_8>();
+	std::unique_ptr<CHIP8::Emulator> pDevice = std::make_unique<CHIP8::Emulator>();
 	
-	// Set memory at location 0 to 55
-	pDevice->GetMemory()->Set(0x0fff, 55);
-	pDevice->GetRegisters()->V[0xA] = 5;
+	pDevice->GetRegisters()->SP = 0;
+	pDevice->GetStack()->Push(pDevice.get() , 0xff);
+	pDevice->GetStack()->Push(pDevice.get(), 0xaa);
+
+	printf("%x ", pDevice->GetStack()->Pop(pDevice.get()));
+	printf("%x ", pDevice->GetStack()->Pop(pDevice.get()));
 
 	/************************************************************************/
 	/* Window creation                                                      */

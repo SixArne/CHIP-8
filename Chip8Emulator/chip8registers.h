@@ -1,17 +1,19 @@
-#ifndef CHIP_8_REGISTERS_H
-#define CHIP_8_REGISTERS_H
+#ifndef CHIP8_REGISTERS_H
+#define CHIP8_REGISTERS_H
 
+// STL includes
 #include <array>
-#include "config.h"
 #include <algorithm>
 
-namespace CHIP_8
-{
+// Emulator includes
+#include "config.h"
+
+namespace CHIP8 {
 	// TODO: Convert to class with safe getters and setters
 	struct Registers
 	{
 		// Our general purpose registers => Goes from V0 to VF
-		std::array<uint8_t, CHIP8_REGISTER_COUNT> V{};
+		std::array<uint8_t, CHIP8_TOTAL_DATA_REGISTERS> V{};
 
 		// This register holds a memory address
 		uint16_t I{};

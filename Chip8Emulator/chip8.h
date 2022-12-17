@@ -8,21 +8,22 @@
 #include "config.h"
 #include "chip8memory.h"
 #include "chip8registers.h"
+#include "chip8stack.h"
 
-
-namespace CHIP_8
-{
-	class CHIP_8 
+namespace CHIP8 {
+	class Emulator
 	{
 	public:
-		CHIP_8();
+		Emulator();
 
 		Memory* GetMemory() { return m_Memory.get(); };
 		Registers* GetRegisters() { return m_Registers.get(); };
+		Stack* GetStack() { return m_Stack.get(); };
 
 	private:
 		std::unique_ptr<Memory> m_Memory{};
 		std::unique_ptr<Registers> m_Registers{};
+		std::unique_ptr<Stack> m_Stack{};
 	};
 }
 

@@ -3,7 +3,8 @@
 
 // Hardware specifications
 #define CHIP8_MEMORY_SIZE 4096
-#define CHIP8_REGISTER_COUNT 16
+#define CHIP8_TOTAL_DATA_REGISTERS 16
+#define CHIP8_TOTAL_STACK_DEPTH 16
 #define CHIP8_WIDTH 64
 #define CHIP8_HEIGHT 32
 

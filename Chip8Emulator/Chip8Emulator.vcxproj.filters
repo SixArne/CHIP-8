@@ -30,6 +30,9 @@
     <ClCompile Include="chip8registers.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="chip8stack.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="chip8.h">
@@ -45,6 +48,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="chip8registers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="chip8stack.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

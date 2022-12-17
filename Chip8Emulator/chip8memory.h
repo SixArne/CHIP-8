@@ -1,11 +1,10 @@
-#ifndef CHIP_8_MEMORY_H
-#define CHIP_8_MEMORY_H
+#ifndef CHIP8_MEMORY_H
+#define CHIP8_MEMORY_H
 
 #include <array>
 #include "config.h"
 
-namespace CHIP_8
-{
+namespace CHIP8 {
 	class Memory
 	{
 	public:
