@@ -1,8 +1,10 @@
 #ifndef WINDOW_H
 #define WINDOW_H
+
 #include <memory>
 #include <string>
 #include <SDL/SDL.h>
+#include "chip8.h"
 
 class Window
 {
@@ -31,6 +33,8 @@ private:
 	std::unique_ptr<SDL_Renderer, SDL_DELETER> m_pRenderer;
 
 	SDL_Event m_Event{};
+	std::unique_ptr<CHIP8::Emulator> m_pEmulator{};
+
 	bool m_ApplicationIsRunning{true};
 	float m_DeltaTime{};
 };

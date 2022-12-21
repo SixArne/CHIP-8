@@ -15,7 +15,7 @@ void CHIP8::Memory::Set(int32_t index, uint8_t value)
 	CheckIfInBounds(index);
 	
 	// Set memory
-	memory[index] = value;
+	m_Memory[index] = value;
 }
 
 uint8_t CHIP8::Memory::Get(int32_t index)
@@ -24,7 +24,7 @@ uint8_t CHIP8::Memory::Get(int32_t index)
 	CheckIfInBounds(index);
 
 	// Get memory
-	return memory[index];
+	return m_Memory[index];
 }
 
 bool CHIP8::Memory::CheckIfInBounds(int32_t index)

@@ -12,10 +12,11 @@ namespace CHIP8 {
 		~Memory();
 
 		void Set(int32_t index, uint8_t value);
+		std::array<uint8_t, CHIP8_MEMORY_SIZE>& GetMemoryUnsafe() { return m_Memory; };
 		uint8_t Get(int32_t index);
 
 	private:
-		std::array<uint8_t, CHIP8_MEMORY_SIZE> memory{};
+		std::array<uint8_t, CHIP8_MEMORY_SIZE> m_Memory{};
 
 		// Checker function
 		static bool CheckIfInBounds(int32_t);
