@@ -37,6 +37,9 @@ private:
 
 	bool m_ApplicationIsRunning{true};
 	float m_DeltaTime{};
+
+	int counter{};
+	float current{-1000.f};
 };
 
 #endif

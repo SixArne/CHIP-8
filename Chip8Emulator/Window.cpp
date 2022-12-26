@@ -3,6 +3,7 @@
 #include <functional>
 #include <iostream>
 #include "chip8.h"
+#include "chip8sprite.h"
 
 Window::Window(std::string& title, uint32_t width, uint32_t height)
 {
@@ -11,7 +12,9 @@ Window::Window(std::string& title, uint32_t width, uint32_t height)
 
 	// Emulator instance
 	m_pEmulator = std::make_unique<CHIP8::Emulator>();
-	m_pEmulator->GetScreen()->Set(0, 0);
+
+	CHIP8::Sprite spriteToRender{ m_pEmulator->GetMemory()->Get(0x05), 5 };
+	m_pEmulator->GetScreen()->DrawSprite(0, 0, spriteToRender);
 }
 
 void Window::Init()
@@ -95,5 +98,19 @@ void Window::Draw()
 
 void Window::Update()
 {
+
+	current += m_DeltaTime;
+
+	if (current >= 5.f)
+	{
+		current = 0.f;
+
+		CHIP8::Sprite spriteToRender{ m_pEmulator->GetMemory()->Get(counter), 5 };
+		m_pEmulator->GetScreen()->DrawSprite(0, 0, spriteToRender);
+
+		counter = std::clamp(counter + 1, 0x0, 0xf);
+	}
+
+	
 	// Custom update logic
 }

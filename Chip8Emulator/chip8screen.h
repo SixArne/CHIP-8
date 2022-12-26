@@ -6,6 +6,7 @@
 
 // Emulator includes
 #include "config.h"
+#include "chip8sprite.h"
 
 namespace CHIP8
 {
@@ -14,6 +15,7 @@ namespace CHIP8
 	public:
 		void Set(int x, int y);
 		bool IsSet(int x, int y);
+		bool DrawSprite(int x, int y, Sprite& sprite);
 
 	private:
 		std::array<std::array<bool, CHIP8_WIDTH>, CHIP8_HEIGHT> m_Pixels{};

@@ -18,13 +18,13 @@ void CHIP8::Memory::Set(int32_t index, uint8_t value)
 	m_Memory[index] = value;
 }
 
-uint8_t CHIP8::Memory::Get(int32_t index)
+uint8_t* CHIP8::Memory::Get(int32_t index)
 {
 	// Bound check
 	CheckIfInBounds(index);
 
 	// Get memory
-	return m_Memory[index];
+	return &m_Memory[index];
 }
 
 bool CHIP8::Memory::CheckIfInBounds(int32_t index)

@@ -161,6 +161,7 @@
     <ClCompile Include="chip8memory.cpp" />
     <ClCompile Include="chip8registers.cpp" />
     <ClCompile Include="chip8screen.cpp" />
+    <ClCompile Include="chip8sprite.cpp" />
     <ClCompile Include="chip8stack.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Window.cpp" />
@@ -171,6 +172,7 @@
     <ClInclude Include="chip8memory.h" />
     <ClInclude Include="chip8registers.h" />
     <ClInclude Include="chip8screen.h" />
+    <ClInclude Include="chip8sprite.h" />
     <ClInclude Include="chip8stack.h" />
     <ClInclude Include="config.h" />
     <ClInclude Include="Window.h" />
